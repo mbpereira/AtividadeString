@@ -30,7 +30,7 @@
         {
             this.texto = new System.Windows.Forms.TextBox();
             this.labelInformativo = new System.Windows.Forms.Label();
-            this.botalLadoALado = new System.Windows.Forms.Button();
+            this.botaoLadoALado = new System.Windows.Forms.Button();
             this.botaoCascata = new System.Windows.Forms.Button();
             this.botaoFechar = new System.Windows.Forms.Button();
             this.botaoSair = new System.Windows.Forms.Button();
@@ -49,27 +49,27 @@
             // labelInformativo
             // 
             this.labelInformativo.AutoSize = true;
-            this.labelInformativo.Location = new System.Drawing.Point(12, 9);
+            this.labelInformativo.Location = new System.Drawing.Point(9, 9);
             this.labelInformativo.Name = "labelInformativo";
             this.labelInformativo.Size = new System.Drawing.Size(80, 13);
             this.labelInformativo.TabIndex = 3;
             this.labelInformativo.Text = "Digite um texto:";
             // 
-            // botalLadoALado
+            // botaoLadoALado
             // 
-            this.botalLadoALado.Location = new System.Drawing.Point(12, 59);
-            this.botalLadoALado.Name = "botalLadoALado";
-            this.botalLadoALado.Size = new System.Drawing.Size(80, 23);
-            this.botalLadoALado.TabIndex = 4;
-            this.botalLadoALado.Text = "Lado a Lado";
-            this.botalLadoALado.UseVisualStyleBackColor = true;
-            this.botalLadoALado.Click += new System.EventHandler(this.botalLadoALado_Click);
+            this.botaoLadoALado.Location = new System.Drawing.Point(12, 59);
+            this.botaoLadoALado.Name = "botaoLadoALado";
+            this.botaoLadoALado.Size = new System.Drawing.Size(80, 23);
+            this.botaoLadoALado.TabIndex = 4;
+            this.botaoLadoALado.Text = "Lado a Lado";
+            this.botaoLadoALado.UseVisualStyleBackColor = true;
+            this.botaoLadoALado.Click += new System.EventHandler(this.botaoLadoALado_Click);
             // 
             // botaoCascata
             // 
-            this.botaoCascata.Location = new System.Drawing.Point(13, 88);
+            this.botaoCascata.Location = new System.Drawing.Point(12, 88);
             this.botaoCascata.Name = "botaoCascata";
-            this.botaoCascata.Size = new System.Drawing.Size(79, 23);
+            this.botaoCascata.Size = new System.Drawing.Size(80, 23);
             this.botaoCascata.TabIndex = 5;
             this.botaoCascata.Text = "Cascata";
             this.botaoCascata.UseVisualStyleBackColor = true;
@@ -83,6 +83,7 @@
             this.botaoFechar.TabIndex = 6;
             this.botaoFechar.Text = "Fechar";
             this.botaoFechar.UseVisualStyleBackColor = true;
+            this.botaoFechar.Click += new System.EventHandler(this.botaoFechar_Click);
             // 
             // botaoSair
             // 
@@ -92,6 +93,7 @@
             this.botaoSair.TabIndex = 7;
             this.botaoSair.Text = "Sair";
             this.botaoSair.UseVisualStyleBackColor = true;
+            this.botaoSair.Click += new System.EventHandler(this.botaoSair_Click);
             // 
             // textoSincronizado
             // 
@@ -100,7 +102,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textoSincronizado.AutoSize = true;
             this.textoSincronizado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textoSincronizado.Location = new System.Drawing.Point(111, 183);
+            this.textoSincronizado.Location = new System.Drawing.Point(156, 181);
             this.textoSincronizado.Name = "textoSincronizado";
             this.textoSincronizado.Size = new System.Drawing.Size(16, 17);
             this.textoSincronizado.TabIndex = 1;
@@ -111,7 +113,7 @@
             // 
             this.ferramenta.AutoSize = true;
             this.ferramenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ferramenta.Location = new System.Drawing.Point(0, 214);
+            this.ferramenta.Location = new System.Drawing.Point(68, 212);
             this.ferramenta.Name = "ferramenta";
             this.ferramenta.Size = new System.Drawing.Size(206, 24);
             this.ferramenta.TabIndex = 0;
@@ -126,7 +128,7 @@
             this.Controls.Add(this.botaoSair);
             this.Controls.Add(this.botaoFechar);
             this.Controls.Add(this.botaoCascata);
-            this.Controls.Add(this.botalLadoALado);
+            this.Controls.Add(this.botaoLadoALado);
             this.Controls.Add(this.labelInformativo);
             this.Controls.Add(this.texto);
             this.Controls.Add(this.textoSincronizado);
@@ -143,7 +145,7 @@
         #endregion
         private System.Windows.Forms.TextBox texto;
         private System.Windows.Forms.Label labelInformativo;
-        private System.Windows.Forms.Button botalLadoALado;
+        private System.Windows.Forms.Button botaoLadoALado;
         private System.Windows.Forms.Button botaoCascata;
         private System.Windows.Forms.Button botaoFechar;
         private System.Windows.Forms.Button botaoSair;

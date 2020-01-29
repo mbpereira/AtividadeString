@@ -42,7 +42,7 @@ namespace WindowsFormsApp1.Views
             label.Left = (Width - label.Width) / 2;
         }
 
-        private void botalLadoALado_Click(object sender, EventArgs e)
+        private void botaoLadoALado_Click(object sender, EventArgs e)
         {
             Organizar(Enums.DisposicaoDeJanelas.LadoALado);
         }
@@ -56,6 +56,16 @@ namespace WindowsFormsApp1.Views
         {
             IPrincipal organizador = (IPrincipal)Owner;
             organizador.Organizar(tipoOrganizacao);
+        }
+
+        private void botaoSair_Click(object sender, EventArgs e)
+        {
+            Owner.Close();
+        }
+
+        private void botaoFechar_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

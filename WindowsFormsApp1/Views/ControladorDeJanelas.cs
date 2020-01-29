@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp1.Contracts;
 using WindowsFormsApp1.Contracts.Factory;
@@ -34,8 +28,14 @@ namespace WindowsFormsApp1.Views
         }
 
 
-        private void button1_Click(object sender, EventArgs e)
+        private void botaoCarregarJanelas_Click(object sender, EventArgs e)
         {
+            if (limparJanelas.Checked)
+            {
+                _cached = ""; 
+                limparJanelas.Checked = false;
+                LimparJanelas();
+            }
             CriarJanelas();
             InicializarJanelas();
             AtualizarQuantidade();
@@ -55,6 +55,15 @@ namespace WindowsFormsApp1.Views
             _janelas.Add(new FerramentaDeTexto("Removedor de duplicidades", this, new RemovedorDeDuplicidades()));
             _janelas.Add(new FerramentaDeTexto("Ordenador de Caracteres Unicos", this, new OrdenadorDeCaracteresUnicos()));
             _janelas.Add(new FerramentaDeTexto("Caseador de Texto", this, new TrocadorDeCase()));
+        }
+
+        private void LimparJanelas()
+        {
+            while(_janelas.Count > 0)
+            {
+                Form janela = _janelas[0];
+                janela.Close();
+            }
         }
 
         private void InicializarJanelas()
@@ -92,5 +101,9 @@ namespace WindowsFormsApp1.Views
             }
         }
 
+        private void botaoSair_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
