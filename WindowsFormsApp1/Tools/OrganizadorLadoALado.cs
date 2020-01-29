@@ -9,7 +9,7 @@ namespace WindowsFormsApp1.Tools
     {
         public void Organizar(IList<Form> janelas)
         {
-            throw new NotImplementedException();
+            
         }
     }
 }
