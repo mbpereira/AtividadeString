@@ -7,7 +7,9 @@ namespace WindowsFormsApp1.Tools
 {
     class OrganizadorLadoALado : IOrganizador
     {
-        public void Organizar(IList<Form> janelas)
+        public IOrganizador Proximo { get; set; }
+
+        public void Organizar(ICollection<Form> janelas, DisposicaoDeJanelas tipoOrganizacao)
         {
             
         }

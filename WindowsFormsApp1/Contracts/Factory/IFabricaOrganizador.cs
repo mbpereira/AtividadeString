@@ -1,6 +1,4 @@
-﻿using WindowsFormsApp1.Enums;
-
-namespace WindowsFormsApp1.Contracts.Factory
+﻿namespace WindowsFormsApp1.Contracts.Factory
 {
     public interface IFabricaOrganizador
     {

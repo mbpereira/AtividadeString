@@ -7,8 +7,17 @@ namespace WindowsFormsApp1.Tools
 {
     class OrganizadorCascata : IOrganizador
     {
-        public void Organizar(IList<Form> janelas)
+        public IOrganizador Proximo { get; set; }
+
+        public void Organizar(ICollection<Form> janelas, DisposicaoDeJanelas tipoOrganizacao)
         {
+            if (tipoOrganizacao != DisposicaoDeJanelas.Cascata)
+            {
+                if(Proximo != null)
+                    Proximo.Organizar(janelas, tipoOrganizacao);
+                return;
+            }
+
             int Top = 0, Left = 0;
             foreach(Form janela in janelas)
             {

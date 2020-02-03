@@ -44,15 +44,15 @@ namespace WindowsFormsApp1.Views
 
         private void botaoLadoALado_Click(object sender, EventArgs e)
         {
-            Organizar(Enums.DisposicaoDeJanelas.LadoALado);
+            Organizar(DisposicaoDeJanelas.LadoALado);
         }
 
         private void botaoCascata_Click(object sender, EventArgs e)
         {
-            Organizar(Enums.DisposicaoDeJanelas.Cascata);
+            Organizar(DisposicaoDeJanelas.Cascata);
         }
 
-        private void Organizar(Enums.DisposicaoDeJanelas tipoOrganizacao)
+        private void Organizar(DisposicaoDeJanelas tipoOrganizacao)
         {
             IPrincipal organizador = (IPrincipal)Owner;
             organizador.Organizar(tipoOrganizacao);

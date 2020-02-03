@@ -1,6 +1,5 @@
 ﻿using WindowsFormsApp1.Contracts;
 using WindowsFormsApp1.Contracts.Factory;
-using WindowsFormsApp1.Enums;
 using WindowsFormsApp1.Tools;
 
 namespace WindowsFormsApp1.Factory

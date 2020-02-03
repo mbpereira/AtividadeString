@@ -7,8 +7,14 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1.Contracts
 {
+    public enum DisposicaoDeJanelas
+    {
+        LadoALado,
+        Cascata
+    }
     public interface IOrganizador
     {
-        void Organizar(IList<Form> janelas);
+        IOrganizador Proximo { get; set; }
+        void Organizar(ICollection<Form> janelas, DisposicaoDeJanelas tipoOrganizacao);
     }
 }

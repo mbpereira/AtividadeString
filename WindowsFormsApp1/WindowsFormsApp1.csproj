@@ -49,10 +49,10 @@
     <Compile Include="Contracts\IFerramentaDeTexto.cs" />
     <Compile Include="Contracts\IPrincipal.cs" />
     <Compile Include="Contracts\IOrganizador.cs" />
-    <Compile Include="Enums\DisposicaoDeJanelas.cs" />
     <Compile Include="Contracts\Factory\IFabricaOrganizador.cs" />
     <Compile Include="Factory\FabricaOrganizador.cs" />
     <Compile Include="Tools\OrganizadorCascata.cs" />
+    <Compile Include="Tools\OrganizadorDeJanelas.cs" />
     <Compile Include="Tools\OrganizadorLadoALado.cs" />
     <Compile Include="Tools\TrocadorDeCase.cs" />
     <Compile Include="Tools\InversorDeTexto.cs" />

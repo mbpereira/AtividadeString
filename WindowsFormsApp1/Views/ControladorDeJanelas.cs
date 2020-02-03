@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using WindowsFormsApp1.Contracts;
 using WindowsFormsApp1.Contracts.Factory;
-using WindowsFormsApp1.Enums;
 using WindowsFormsApp1.Factory;
 using WindowsFormsApp1.Tools;
 
@@ -45,8 +44,8 @@ namespace WindowsFormsApp1.Views
 
         public void Organizar(DisposicaoDeJanelas tipo)
         {
-            IOrganizador organizador = _fabrica.CriarOrganizador(tipo);
-            organizador.Organizar(_janelas);
+            OrganizadorDeJanelas organizador = new OrganizadorDeJanelas();
+            organizador.Organizar(_janelas, tipo);
         }
 
         private void CriarJanelas()

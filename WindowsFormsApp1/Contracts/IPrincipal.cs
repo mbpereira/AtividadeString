@@ -1,6 +1,4 @@
-﻿using WindowsFormsApp1.Enums;
-
-namespace WindowsFormsApp1.Contracts
+﻿namespace WindowsFormsApp1.Contracts
 {
     public interface IPrincipal
     {
