@@ -7,7 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using AtividadeString.Contracts;
+using AtividadeString.Common.Contracts;
+using AtividadeString.Common.Enums;
+
 
 namespace AtividadeString.Views
 {

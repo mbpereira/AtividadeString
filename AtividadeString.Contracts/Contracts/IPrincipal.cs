@@ -1,4 +1,6 @@
-﻿namespace AtividadeString.Contracts
+﻿using AtividadeString.Common.Enums;
+
+namespace AtividadeString.Common.Contracts
 {
     public interface IPrincipal
     {

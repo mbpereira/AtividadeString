@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using AtividadeString.Contracts;
+using AtividadeString.Common.Contracts;
 
-namespace AtividadeString.Core.Tools
+namespace AtividadeString.Core.TextTools
 {
     public class RemovedorDeDuplicidades : IFerramentaDeTexto
     {

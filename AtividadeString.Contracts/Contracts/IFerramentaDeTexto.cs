@@ -1,4 +1,4 @@
-﻿namespace AtividadeString.Contracts
+﻿namespace AtividadeString.Common.Contracts
 {
     public interface IFerramentaDeTexto
     {

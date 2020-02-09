@@ -3,20 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using AtividadeString.Contracts;
+using AtividadeString.Common.Contracts;
 
-namespace AtividadeString.Core.Tools
+namespace AtividadeString.Core.TextTools
 {
     public class OrdenadorDeCaracteresUnicos : IFerramentaDeTexto
     {
-        private IFerramentaDeTexto _removedorDeDuplicidades;
-        public OrdenadorDeCaracteresUnicos(IFerramentaDeTexto removedorDeDupliciades)
+        private RemovedorDeDuplicidades _removedorDeDuplicidades;
+        public OrdenadorDeCaracteresUnicos(RemovedorDeDuplicidades removedorDeDupliciades)
         {
             _removedorDeDuplicidades = removedorDeDupliciades;
-        }
-        public OrdenadorDeCaracteresUnicos()
-        {
-            _removedorDeDuplicidades = new RemovedorDeDuplicidades();
         }
 
         public string Processar(string text)

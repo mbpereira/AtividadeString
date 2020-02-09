@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Windows.Forms;
-using AtividadeString.Contracts;
+using AtividadeString.Common.Contracts;
 using System.Drawing;
 
 namespace AtividadeString.Forms.Tools

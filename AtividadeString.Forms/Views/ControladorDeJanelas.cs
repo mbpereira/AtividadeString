@@ -1,19 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using AtividadeString.Contracts;
+using AtividadeString.Common.Contracts;
+using AtividadeString.Common.Enums;
+
 using AtividadeString.Forms.Factory;
-using AtividadeString.Core.Tools;
+using AtividadeString.Core.TextTools;
 using AtividadeString.Forms.Tools;
 
 namespace AtividadeString.Views
 {
     public partial class ControladorDeJanelas : Form, IPrincipal
     {
-        private string _cached;
+        // alterar interface de IPrincipal para INotificador
+        // INotificador.notificar deverá receber dois parâmetros: TipoNotificacao, Mensagem
 
+        private string _cached;
         private IList<Form> _janelas;
         private FabricaOrganizador _fabrica;
+
         public ControladorDeJanelas() : this(new List<Form>(), FabricaOrganizador.CriarFabrica())
         {
         }
@@ -26,6 +31,8 @@ namespace AtividadeString.Views
             InitializeComponent();
         }
 
+
+        private void botaoSair_Click(object sender, EventArgs e) => Close();
 
         private void botaoCarregarJanelas_Click(object sender, EventArgs e)
         {
@@ -40,6 +47,8 @@ namespace AtividadeString.Views
             AtualizarQuantidade();
             Transmitir(_cached);
         }
+        public void JanelaClosing(object sender, System.Windows.Forms.FormClosingEventArgs e) => FecharJanela((Form)sender);
+
 
 
         public void Organizar(DisposicaoDeJanelas tipo)
@@ -50,9 +59,10 @@ namespace AtividadeString.Views
 
         private void CriarJanelas()
         {
+            RemovedorDeDuplicidades removedor = new RemovedorDeDuplicidades();
             _janelas.Add(new FerramentaDeTexto("Inversor de Texto", this, new InversorDeTexto()));
-            _janelas.Add(new FerramentaDeTexto("Removedor de duplicidades", this, new RemovedorDeDuplicidades()));
-            _janelas.Add(new FerramentaDeTexto("Ordenador de Caracteres Unicos", this, new OrdenadorDeCaracteresUnicos()));
+            _janelas.Add(new FerramentaDeTexto("Removedor de duplicidades", this, removedor));
+            _janelas.Add(new FerramentaDeTexto("Ordenador de Caracteres Unicos", this, new OrdenadorDeCaracteresUnicos(removedor)));
             _janelas.Add(new FerramentaDeTexto("Caseador de Texto", this, new TrocadorDeCase()));
         }
 
@@ -75,20 +85,15 @@ namespace AtividadeString.Views
             }
         }
 
-        public void JanelaClosing(object sender, System.Windows.Forms.FormClosingEventArgs e)
-        {
-            FecharJanela((Form) sender);
-        }
+        
         public void FecharJanela(Form janela)
         {
             _janelas.Remove(janela);
             AtualizarQuantidade();
         }
 
-        private void AtualizarQuantidade()
-        {
-            quantidadeDeJanelas.Text = _janelas.Count.ToString();
-        }
+        private void AtualizarQuantidade () => quantidadeDeJanelas.Text = _janelas.Count.ToString();
+        
 
         public void Transmitir(string message)
         {
@@ -100,9 +105,6 @@ namespace AtividadeString.Views
             }
         }
 
-        private void botaoSair_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
+
     }
 }

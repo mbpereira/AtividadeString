@@ -1,6 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using AtividadeString.Core.Tools;
+using AtividadeString.Core.TextTools;
 
 namespace AtividadeString.Tests
 {
@@ -34,7 +34,8 @@ namespace AtividadeString.Tests
         [TestMethod]
         public void TestarOrganizadorDeCaracteresUnicos()
         {
-            var organizador = new OrdenadorDeCaracteresUnicos();
+            var removedor = new RemovedorDeDuplicidades();
+            var organizador = new OrdenadorDeCaracteresUnicos(removedor);
 
             var organizado = organizador.Processar("accb");
             Assert.AreEqual("abc", organizado);

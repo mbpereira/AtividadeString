@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AtividadeString.Tests", "At
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AtividadeString.Core", "AtividadeString.Core\AtividadeString.Core.csproj", "{BBA1A32F-E660-4BB8-89DF-CF7E36ADB8C5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AtividadeString.Contracts", "AtividadeString.Contracts\AtividadeString.Contracts.csproj", "{65E09E1B-E16E-4343-8E75-87A5D74C23E7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AtividadeString.Common", "AtividadeString.Contracts\AtividadeString.Common.csproj", "{65E09E1B-E16E-4343-8E75-87A5D74C23E7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

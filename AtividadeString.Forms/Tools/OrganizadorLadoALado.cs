@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using AtividadeString.Contracts;
+using AtividadeString.Common.Contracts;
 
 namespace AtividadeString.Forms.Tools
 {

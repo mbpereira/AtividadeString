@@ -51,14 +51,17 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="FerramentaDeTextoTeste.cs" />
+    <Compile Include="ConversaoDeMensagemParaMatrizDeInteiros.cs" />
+    <Compile Include="CriptgrafadorTeste.cs" />
+    <Compile Include="OperacoesMatrizesTeste.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AtividadeString.Contracts\AtividadeString.Contracts.csproj">
+    <ProjectReference Include="..\AtividadeString.Contracts\AtividadeString.Common.csproj">
       <Project>{65e09e1b-e16e-4343-8e75-87a5d74c23e7}</Project>
-      <Name>AtividadeString.Contracts</Name>
+      <Name>AtividadeString.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\AtividadeString.Core\AtividadeString.Core.csproj">
       <Project>{bba1a32f-e660-4bb8-89df-cf7e36adb8c5}</Project>

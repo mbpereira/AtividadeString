@@ -41,17 +41,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Tools\InversorDeTexto.cs" />
+    <Compile Include="Complements\Criptografador.cs" />
+    <Compile Include="Complements\MatrizOperacoes.cs" />
+    <Compile Include="TextTools\Criptografador.cs" />
+    <Compile Include="TextTools\InversorDeTexto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tools\OrdenadorDeCaracteresUnicos.cs" />
-    <Compile Include="Tools\RemovedorDeDuplicidades.cs" />
-    <Compile Include="Tools\TrocadorDeCase.cs" />
+    <Compile Include="TextTools\OrdenadorDeCaracteresUnicos.cs" />
+    <Compile Include="TextTools\RemovedorDeDuplicidades.cs" />
+    <Compile Include="TextTools\TrocadorDeCase.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AtividadeString.Contracts\AtividadeString.Contracts.csproj">
+    <ProjectReference Include="..\AtividadeString.Contracts\AtividadeString.Common.csproj">
       <Project>{65e09e1b-e16e-4343-8e75-87a5d74c23e7}</Project>
-      <Name>AtividadeString.Contracts</Name>
+      <Name>AtividadeString.Common</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
