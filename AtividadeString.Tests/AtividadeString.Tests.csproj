@@ -57,6 +57,7 @@
     <Compile Include="ConversaoDeMensagemParaMatrizDeInteiros.cs" />
     <Compile Include="CriptgrafadorTeste.cs" />
     <Compile Include="OperacoesMatrizesTeste.cs" />
+    <Compile Include="DescriptografadorTeste.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -39,7 +39,7 @@ namespace AtividadeString.Core.Tools.Complementary
             if (quantidadeDeLetras % _pin.NumberOfColumns != 0)
                 mensagem += " ";
 
-            Matrix matrizCorrespondente = ConverterMensagemParaMatrizDeInteiros(mensagem, c => {
+            Matrix matrizCorrespondente = ConverterMensagemParaMatrizDeInteiros<char>(mensagem.ToCharArray(), c => {
                 if (alfabeto.Contains(c)) 
                     return alfabeto.IndexOf(c);
                 else
@@ -53,7 +53,7 @@ namespace AtividadeString.Core.Tools.Complementary
 
         public string Descriptografar(string mensagemCriptografada)
         {
-            Matrix matrizCorrespondente = ConverterMensagemParaMatrizDeInteiros(mensagemCriptografada, c => (int)c);
+            Matrix matrizCorrespondente = ConverterMensagemParaMatrizDeInteiros<string>(mensagemCriptografada.Split('.'), c => int.Parse(c));
             Matrix matrizDecodificada = _calculadoraDeMatrizes.Product(_calculadoraDeMatrizes.Inverse(_pin), matrizCorrespondente);
 
             return ConverterMatrizDecodificada(matrizDecodificada);
@@ -76,7 +76,7 @@ namespace AtividadeString.Core.Tools.Complementary
                     }
                     else if(itemInteiro > alfabeto.Count)
                     {
-                        sb.Append((char) itemInteiro / 10);
+                        sb.Append(Convert.ToChar(itemInteiro / 10));
                     }
                     else
                     {
@@ -85,7 +85,7 @@ namespace AtividadeString.Core.Tools.Complementary
                 }
             }
 
-            return sb.ToString();
+            return sb.ToString().Trim();
         }
         private string ConverterMatrizCodificada(Matrix matriz)
         {
@@ -107,29 +107,35 @@ namespace AtividadeString.Core.Tools.Complementary
 
             return sb.ToString();
         }
-        private int CalcularQuantidadeDeColunas(string mensagem)
+        private int CalcularQuantidadeDeColunas<T>(T[] mensagem)
         {
             int quantidadeDeColunas = mensagem.Length / _pin.NumberOfRows;
 
             return quantidadeDeColunas;
         }
         
-        public Matrix ConverterMensagemParaMatrizDeInteiros(string mensagem, Func<char, int> converterEmInteiro)
+        public Matrix ConverterMensagemParaMatrizDeInteiros<T>(T[] mensagem, Func<T, int> converterEmInteiro)
         {
             int quantidadeDeColunas = CalcularQuantidadeDeColunas(mensagem);
 
             double[,] matriz = new double[2,quantidadeDeColunas];
 
             int i = 0, j = 0;
-            foreach(char c in mensagem)
+            foreach(T c in mensagem)
             {
+                int convertido = converterEmInteiro(c);
+
+                // inteiros negativos serão ignorados
+                if (convertido < 0)
+                    continue;
+
                 if (j == quantidadeDeColunas)
                 {
                     j = 0;
                     i++;
                 }
 
-                matriz[i, j] = converterEmInteiro(c);
+                matriz[i, j] = convertido;
 
                 j++;
             }
