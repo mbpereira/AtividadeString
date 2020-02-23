@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AtividadeString.Common.Enums
+namespace AtividadeString.Core.Enums
 {
     public enum DisposicaoDeJanelas
     {

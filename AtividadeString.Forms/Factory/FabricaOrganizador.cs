@@ -1,5 +1,5 @@
-﻿using AtividadeString.Common.Contracts;
-using AtividadeString.Common.Enums;
+﻿using AtividadeString.Core.Contracts;
+using AtividadeString.Core.Enums;
 using AtividadeString.Forms.Tools;
 namespace AtividadeString.Forms.Factory
 {

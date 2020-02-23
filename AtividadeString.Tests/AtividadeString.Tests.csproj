@@ -39,6 +39,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MatrixCalculator.Core">
+      <HintPath>..\MyPackages\MatrixCalculator\MatrixCalculator.Core.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualStudio.TestPlatform.TestFramework, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\MSTest.TestFramework.1.3.2\lib\net45\Microsoft.VisualStudio.TestPlatform.TestFramework.dll</HintPath>
     </Reference>
@@ -59,10 +62,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AtividadeString.Contracts\AtividadeString.Common.csproj">
-      <Project>{65e09e1b-e16e-4343-8e75-87a5d74c23e7}</Project>
-      <Name>AtividadeString.Common</Name>
-    </ProjectReference>
     <ProjectReference Include="..\AtividadeString.Core\AtividadeString.Core.csproj">
       <Project>{bba1a32f-e660-4bb8-89df-cf7e36adb8c5}</Project>
       <Name>AtividadeString.Core</Name>

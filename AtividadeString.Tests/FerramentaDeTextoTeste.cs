@@ -1,6 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using AtividadeString.Core.TextTools;
+using AtividadeString.Core.Tools.Text;
 
 namespace AtividadeString.Tests
 {

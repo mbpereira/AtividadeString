@@ -1,5 +1,5 @@
 ﻿
-namespace AtividadeString.Common.Contracts
+namespace AtividadeString.Core.Contracts
 {
     public interface INotificavel
     {

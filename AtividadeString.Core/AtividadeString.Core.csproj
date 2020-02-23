@@ -31,8 +31,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MatrixCalculator.Core">
+      <HintPath>..\MyPackages\MatrixCalculator\MatrixCalculator.Core.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,21 +45,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Complements\Criptografador.cs" />
-    <Compile Include="Complements\MatrizOperacoes.cs" />
-    <Compile Include="TextTools\Criptografador.cs" />
-    <Compile Include="TextTools\InversorDeTexto.cs" />
+    <Compile Include="Tools\Complementary\Criptografador.cs" />
+    <Compile Include="Contracts\ICriptografador.cs" />
+    <Compile Include="Contracts\IDescriptografador.cs" />
+    <Compile Include="Contracts\IFerramentaDeTexto.cs" />
+    <Compile Include="Contracts\INotificavel.cs" />
+    <Compile Include="Contracts\IOrganizador.cs" />
+    <Compile Include="Contracts\IPrincipal.cs" />
+    <Compile Include="Enums\DisposicaoDeJanelas.cs" />
+    <Compile Include="Tools\Text\Criptografador.cs" />
+    <Compile Include="Tools\Text\InversorDeTexto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TextTools\OrdenadorDeCaracteresUnicos.cs" />
-    <Compile Include="TextTools\RemovedorDeDuplicidades.cs" />
-    <Compile Include="TextTools\TrocadorDeCase.cs" />
+    <Compile Include="Tools\Text\OrdenadorDeCaracteresUnicos.cs" />
+    <Compile Include="Tools\Text\RemovedorDeDuplicidades.cs" />
+    <Compile Include="Tools\Text\TrocadorDeCase.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\AtividadeString.Contracts\AtividadeString.Common.csproj">
-      <Project>{65e09e1b-e16e-4343-8e75-87a5d74c23e7}</Project>
-      <Name>AtividadeString.Common</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

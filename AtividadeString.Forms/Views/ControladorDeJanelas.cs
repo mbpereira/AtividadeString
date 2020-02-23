@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using AtividadeString.Common.Contracts;
-using AtividadeString.Common.Enums;
-
+using AtividadeString.Core.Contracts;
+using AtividadeString.Core.Enums;
 using AtividadeString.Forms.Factory;
-using AtividadeString.Core.TextTools;
+using AtividadeString.Core.Tools.Text;
 using AtividadeString.Forms.Tools;
 
 namespace AtividadeString.Views
@@ -30,7 +29,6 @@ namespace AtividadeString.Views
             _fabrica = fabrica;
             InitializeComponent();
         }
-
 
         private void botaoSair_Click(object sender, EventArgs e) => Close();
 
@@ -64,6 +62,7 @@ namespace AtividadeString.Views
             _janelas.Add(new FerramentaDeTexto("Removedor de duplicidades", this, removedor));
             _janelas.Add(new FerramentaDeTexto("Ordenador de Caracteres Unicos", this, new OrdenadorDeCaracteresUnicos(removedor)));
             _janelas.Add(new FerramentaDeTexto("Caseador de Texto", this, new TrocadorDeCase()));
+
         }
 
         private void LimparJanelas()

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Windows.Forms;
 
-namespace AtividadeString.Common.Contracts
+namespace AtividadeString.Core.Contracts
 {
     public interface IOrganizador
     {

@@ -1,6 +1,6 @@
-﻿using AtividadeString.Common.Contracts;
+﻿using AtividadeString.Core.Contracts;
 
-namespace AtividadeString.Core.TextTools
+namespace AtividadeString.Core.Tools.Text
 {
     public class Criptografador : IFerramentaDeTexto
     {

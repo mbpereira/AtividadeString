@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using AtividadeString.Common.Contracts;
+using AtividadeString.Core.Contracts;
 
-namespace AtividadeString.Core.TextTools
+namespace AtividadeString.Core.Tools.Text
 {
     public class OrdenadorDeCaracteresUnicos : IFerramentaDeTexto
     {

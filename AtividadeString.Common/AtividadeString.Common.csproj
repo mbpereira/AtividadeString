@@ -42,14 +42,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contracts\IDescriptografador.cs" />
     <Compile Include="Enums\DisposicaoDeJanelas.cs" />
     <Compile Include="Contracts\ICriptografador.cs" />
     <Compile Include="Contracts\IFerramentaDeTexto.cs" />
-    <Compile Include="Contracts\IMatrizOperacoes.cs" />
     <Compile Include="Contracts\INotificavel.cs" />
     <Compile Include="Contracts\IOrganizador.cs" />
     <Compile Include="Contracts\IPrincipal.cs" />
-    <Compile Include="Models\Matriz.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
