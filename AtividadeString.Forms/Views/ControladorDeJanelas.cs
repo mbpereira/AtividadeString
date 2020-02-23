@@ -6,6 +6,8 @@ using AtividadeString.Core.Enums;
 using AtividadeString.Forms.Factory;
 using AtividadeString.Core.Tools.Text;
 using AtividadeString.Forms.Tools;
+using MatrixCalculator.Core.Models;
+using MatrixCalculator.Core;
 
 namespace AtividadeString.Views
 {
@@ -57,12 +59,17 @@ namespace AtividadeString.Views
 
         private void CriarJanelas()
         {
+            Matrix pin = new Matrix(2, 2, new double[,] { { 1, 2 }, { 3, 4 } });
+            Core.Tools.Complementary.Criptografador crip = new Core.Tools.Complementary.Criptografador(pin);
+            
             RemovedorDeDuplicidades removedor = new RemovedorDeDuplicidades();
+            
             _janelas.Add(new FerramentaDeTexto("Inversor de Texto", this, new InversorDeTexto()));
             _janelas.Add(new FerramentaDeTexto("Removedor de duplicidades", this, removedor));
             _janelas.Add(new FerramentaDeTexto("Ordenador de Caracteres Unicos", this, new OrdenadorDeCaracteresUnicos(removedor)));
             _janelas.Add(new FerramentaDeTexto("Caseador de Texto", this, new TrocadorDeCase()));
-
+            _janelas.Add(new FerramentaDeTexto("Criptografador de Texto", this, new Criptografador(crip)));
+            _janelas.Add(new FerramentaDeTexto("Descriptografador de Texto", this, new Descriptografador(crip)));
         }
 
         private void LimparJanelas()

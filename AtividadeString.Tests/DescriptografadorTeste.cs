@@ -32,6 +32,14 @@ namespace AtividadeString.Tests
 
             Assert.AreEqual("-", cripto.Descriptografar("554.1558"));
         }
+        [TestMethod]
+        public void DeveRetornarIndescriptografavel()
+        {
+            Matrix pin = new Matrix(2, 2, new double[,] { { 1, 2 }, { 3, 4 } });
+            Criptografador cripto = new Criptografador(pin);
+
+            Assert.AreEqual("Indescriptografavel", cripto.Descriptografar("7"));
+        }
 
 
     }

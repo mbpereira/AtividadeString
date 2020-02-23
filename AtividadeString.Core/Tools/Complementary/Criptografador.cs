@@ -34,10 +34,7 @@ namespace AtividadeString.Core.Tools.Complementary
 
         public string Criptografar(string mensagem)
         {
-            int quantidadeDeLetras = mensagem.Length;
-
-            if (quantidadeDeLetras % _pin.NumberOfColumns != 0)
-                mensagem += " ";
+            mensagem = AjustarTexto(mensagem);
 
             Matrix matrizCorrespondente = ConverterMensagemParaMatrizDeInteiros<char>(mensagem.ToCharArray(), c => {
                 if (alfabeto.Contains(c)) 
@@ -51,12 +48,37 @@ namespace AtividadeString.Core.Tools.Complementary
             return ConverterMatrizCodificada(matrizCodificada);
         }
 
+        private string AjustarTexto(string mensagem)
+        {
+            int quantidadeDeLetras = mensagem.Length;
+
+            if (quantidadeDeLetras % _pin.NumberOfColumns != 0)
+                mensagem += " ";
+
+            return mensagem;
+        }
+
         public string Descriptografar(string mensagemCriptografada)
         {
-            Matrix matrizCorrespondente = ConverterMensagemParaMatrizDeInteiros<string>(mensagemCriptografada.Split('.'), c => int.Parse(c));
-            Matrix matrizDecodificada = _calculadoraDeMatrizes.Product(_calculadoraDeMatrizes.Inverse(_pin), matrizCorrespondente);
+            string[] letrasCriptografadas = mensagemCriptografada.Split('.');
+            
+            if(letrasCriptografadas.Length % 2 != 0)
+            {
+                return "Indescriptografavel";
+            }
 
-            return ConverterMatrizDecodificada(matrizDecodificada);
+            try
+            {
+                Matrix matrizCorrespondente = ConverterMensagemParaMatrizDeInteiros<string>(letrasCriptografadas, c => int.Parse(c));
+                Matrix matrizDecodificada = _calculadoraDeMatrizes.Product(_calculadoraDeMatrizes.Inverse(_pin), matrizCorrespondente);
+
+                return ConverterMatrizDecodificada(matrizDecodificada);
+            } 
+            catch (Exception e)
+            {
+                return "Indescripografavel";
+            }
+
         }
 
         private string ConverterMatrizDecodificada(Matrix matriz)
@@ -114,11 +136,10 @@ namespace AtividadeString.Core.Tools.Complementary
             return quantidadeDeColunas;
         }
         
-        public Matrix ConverterMensagemParaMatrizDeInteiros<T>(T[] mensagem, Func<T, int> converterEmInteiro)
+        private Matrix ConverterMensagemParaMatrizDeInteiros<T>(T[] mensagem, Func<T, int> converterEmInteiro)
         {
-            int quantidadeDeColunas = CalcularQuantidadeDeColunas(mensagem);
-
-            double[,] matriz = new double[2,quantidadeDeColunas];
+            int quantidadeDeColunasMensagem = CalcularQuantidadeDeColunas(mensagem);
+            double[,] matriz = new double[2, quantidadeDeColunasMensagem];
 
             int i = 0, j = 0;
             foreach(T c in mensagem)
@@ -129,7 +150,7 @@ namespace AtividadeString.Core.Tools.Complementary
                 if (convertido < 0)
                     continue;
 
-                if (j == quantidadeDeColunas)
+                if (j ==  quantidadeDeColunasMensagem)
                 {
                     j = 0;
                     i++;
@@ -140,7 +161,7 @@ namespace AtividadeString.Core.Tools.Complementary
                 j++;
             }
 
-            return new Matrix(2, quantidadeDeColunas, matriz);
+            return new Matrix(2,  quantidadeDeColunasMensagem, matriz);
         }
 
 
